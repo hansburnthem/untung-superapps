@@ -1,0 +1,88 @@
+
+Users
+RoleGroups
+Features
+Categories
+Products
+Transactions
+Payments
+
+Users: 
+    - id INT
+    - name STRING
+    - email STRING
+    - password HASH
+    - member_id STRING
+    - role_id INT
+    - join_date DATE
+    - email_verified_at DATE
+    - remember_token STRING
+    - timestamp DATETIME
+
+Features:
+    - id INT
+    - feature STRING
+    - timestamp DATETIME
+
+RoleDetails:
+    - id INT
+    - feature_id INT
+    - view BOOLEAN
+    - create BOOLEAN
+    - update BOOLEAN
+    - delete BOOLEAN
+    - timestamp DATETIME
+
+RoleGroups:
+    - id INT
+    - role STRING
+    - role_detail_id INT
+    - timestamp DATETIME
+
+Categories:
+    - id INT
+    - category STRING
+    - timestamp DATETIME
+
+Products:
+    - id INT
+    - product STRING
+    - product_image STRING
+    - category_id INT
+    - weight FLOAT
+    - stock INT
+    - price FLOAT
+    - timestamp DATETIME
+
+TransactionUsers:
+    - id
+    - transaction_id INT
+    - user_id INT
+    - timestamp DATETIME
+
+Transactions:
+    - id INT
+    - payment_id INT
+    - timestamp DATETIME
+
+TransactionDetails:
+    - id INT
+    - transaction_id INT
+    - product_id INT
+    - qty INT
+    - timestamp DATETIME
+
+Payments:
+    - id INT
+    - timestamp DATETIME
+
+PaymentDetails:
+    - id INT
+    - payment_id INT
+    - payment_gateway_id INT
+    - amount FLOAT
+
+PaymentGateway:
+    - id INT
+    - payment_gateway STRING
+    - timestamp DATETIME
